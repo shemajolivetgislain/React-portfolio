@@ -1,19 +1,20 @@
-import Header from "./containers/header";
-import ProductListing from "./containers/productListing";
-import ProductDetails from "./containers/productDetails";
+import Header from "./containers/Header";
+import ProductListing from "./containers/ProductListing";
+import ProductDetails from "./containers/ProductDetails";
 import React from "react";
-import { BrowserRouter as Switch, Router } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+
 
 export default function App() {
   return (
     <div className="App">
-      <Header />
       <Router>
-        <Switch>
-          <Router path="/" exact component={ProductListing} />
-          <Router path="/product/:productId" exact component={ProductDetails} />
-          <Router>404 Not Found!</Router>
-        </Switch>
+        <Header />
+        <Routes>
+          <Route path="/" exact element={<ProductListing />} />
+          <Route path="/product/:productId" exact element={ProductDetails} />
+          <Route>404 Not Found!</Route>
+        </Routes>
       </Router>
     </div>
   );
