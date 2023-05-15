@@ -12,7 +12,7 @@ export default function App() {
         <Header />
         <Routes>
           <Route path="/" exact element={<ProductListing />} />
-          <Route path="/product/:productId" exact element={ProductDetails} />
+          <Route path="/product/:productId" exact element={<ProductDetails/>} />
           <Route>404 Not Found!</Route>
         </Routes>
       </Router>

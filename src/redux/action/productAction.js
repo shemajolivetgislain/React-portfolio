@@ -1,7 +1,7 @@
 import { ActionTypes } from "../contants/actionType";
 
 export const setProducts = (products) => {
-  // 1
+  // this is an action creator that returns an action object that can be used to perform an action 
   return {
     type: ActionTypes.SET_PRODUCTS,
     payload: products,
@@ -15,3 +15,10 @@ export const selectedProduct = (product) => {
     payload: product,
   };
 };
+
+export const removeSelectedProduct = () => {
+  // 3
+  return {
+    type: ActionTypes.REMOVE_SELECTED_PRODUCT,
+  };
+}
